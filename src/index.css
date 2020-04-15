@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .g-carousel {
+  margin-left: 90px !important;
+  margin-right: 90px !important;
+} */
+
+.g-card {
+  display: inline-block;
+  margin: auto;
+}
+
+.g-card-image {
+  border-radius: 10px;
+  width: 210px;
+  height: 210px;
+  /* box-shadow: 0px 0px 3px 1px #ccc; */
+}
+
+.card-info {
+  margin-top: 10px;
+  min-height: 100px;
+}
+
+.g-card-title {
+  font-size: 24px;
+  margin: 0px;
+}
+
+.g-card-sub-title {
+  font-size:16px;
+  margin: 0px;
+}
+
+.success-msg {
+  color: #57A773;
+  padding: 10px 15px;
+}
+
+.err-msg {
+  color: #EE6352;
+  padding: 10px 15px;
+}
