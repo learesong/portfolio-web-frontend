@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Axios from 'axios';
 
 import Content from "../components/Content";
 
@@ -31,9 +32,22 @@ class ContactForm extends React.Component {
     console.log(event);
     event.preventDefault(); 
     this.setState({
-        disabled: true,
-        emailSent: true
+        disabled: true, 
     });
+
+    Axios.post('http://localhost:8080/email', this.state)
+    .then(res => {
+        this.setState({
+          disabled: false,
+          emailSent: true
+        });
+    })
+    .catch(err => {
+      this.setState({
+        disabled: false,
+        emailSent: false
+      })
+    })
   }
 
   render() {
@@ -79,7 +93,7 @@ class ContactForm extends React.Component {
           </Button>
 
           {this.state.emailSent === true && <p className="d-inline success-msg"> Sent :)</p>}
-          {this.state.emailSent === false && <p className="d-inline err-msg">Email wasn't sent :(</p>}
+          {this.state.emailSent === false && <p className="d-inline err-msg">Email wasn't sent :( Please fill out all the sections if you haven't done so</p>}
         </Form> 
       </Content>
     );

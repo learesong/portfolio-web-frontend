@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 import Card from './Card';
 import ProfileImg from '../assets/images/profile-pic.jpeg';
-import ResumeImg from '../assets/images/paper-collection.jpeg';
+import BlogImg from '../assets/images/paper-collection.jpeg';
 import ProjectImg from '../assets/images/macbook-setup.jpeg';
 import ContactImg from '../assets/images/hello-light-screen.png';
 
@@ -24,10 +24,10 @@ class Carousel extends React.Component {
                 },
                 {
                     id: 1,
-                    title: 'Resume',
-                    subTitle: 'Find out about resume',
-                    imgSrc: ResumeImg,
-                    link: '/resume',
+                    title: 'Blog',
+                    subTitle: 'Find out about blog',
+                    imgSrc: BlogImg,
+                    link: '/blog',
                     selected: false 
                 },
                 {

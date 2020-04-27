@@ -1,11 +1,11 @@
 import React from 'react';
 import Carousel from '../components/Carousel'
-import Hero from '../components/Hero';
+import PageBanner from '../components/PageBanner';
 
 function HomePage(props){
     return(
         <div>
-            <Hero title={props.title} subTitle={props.subTitle}/>
+            <PageBanner title={props.title} subTitle={props.subTitle}/>
             <Carousel />
         </div>
     );

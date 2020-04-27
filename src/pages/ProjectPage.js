@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Hero from '../components/Hero';
+
 function ProjectPage(props){
     return(
-        <p>ProjectPage working</p>
+        <div>
+            <Hero title={props.title} subTitle={props.subTitle}/>
+        </div>
     );
 }
 

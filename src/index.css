@@ -22,6 +22,18 @@ code {
   margin: auto;
 }
 
+.g-blog-card {
+  display: inline-block;
+}
+
+.g-blog-image {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  width: 200px;
+  height: 250px;
+}
+
 .g-card-image {
   border-radius: 10px;
   width: 210px;
@@ -44,6 +56,10 @@ code {
   margin: 0px;
 }
 
+.g-blog {
+
+}
+
 .success-msg {
   color: #57A773;
   padding: 10px 15px;
@@ -52,4 +68,13 @@ code {
 .err-msg {
   color: #EE6352;
   padding: 10px 15px;
+}
+
+.banner-title {
+  text-shadow: 3px 3px 0px rgba(77, 117, 179, 0.404);
+}
+
+.banner-sub-title {
+  font-family: monospace;
+  font-size: 2em
 }
