@@ -2,16 +2,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
+import { faLinkedin, faGithub, faTwitter, faGitlab, faGit } from '@fortawesome/free-brands-svg-icons';
 import Icon from '../components/Icon'
-
+import IconsList from '../data/IconList.js'
 
 function Footer(props) {
 
-
-
     return(
-        <footer className="mt-5 fixed-bottom" >
+        <footer className="mt-5" >
             <Container fluid={true}>
                 {/* <Row className="border-top justify-content-between p3">
                     <Col className="p-0" md={3} sm={12}>
@@ -26,7 +24,7 @@ function Footer(props) {
                         Copyright © Leare Song 2020
                     </Col>
                     <Col>
-                        {props.icon.map((item) => <Icon link={item.link} icon={item.icon} key={item.icon} />)}
+                        {IconsList.map((item) => <Icon link={item.link} icon={item.icon} key={item.icon} />)}
                     </Col>
                 </Row>
             </Container>

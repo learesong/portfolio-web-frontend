@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 // import { library } from '@fortawesome/fontawesome-svg-core';
-
+import IconsList from '../data/IconList.js'
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 import Emoji from '../components/Emoji';
@@ -28,10 +28,9 @@ function ContactPage(props) {
                                     use the form below <Emoji label="envelope" symbol="✉️"/> 
                                     <Emoji label="postbox" symbol="📮"/> <br/>
 
-                                    {props.icon.map((item) => 
+                                    {IconsList.map((item) => 
                                         <Icon link={item.link} icon={item.icon} key={item.icon} />
                                     )}
-                                    {/* <a href="https://www.linkedin.com/in/learesong/"><FontAwesomeIcon icon={faLinkedin}/> </a> <FontAwesomeIcon icon={faGithub} /> <FontAwesomeIcon icon={faTwitter} /> */}
                                 </p>
                             </Content>
                         </Col>
@@ -41,6 +40,5 @@ function ContactPage(props) {
             </div>
         );
     }
-
 
 export default ContactPage;

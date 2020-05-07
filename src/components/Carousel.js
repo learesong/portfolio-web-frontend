@@ -74,11 +74,13 @@ class Carousel extends React.Component {
 
     render(){
         return(
-            <Container>
-                <Row className="justify-content-around g-carousel">
-                   {this.makeItems(this.state.items)}
-                </Row>
-            </Container>
+            <div className="carousel-container">  
+                <Container>
+                    <Row className="justify-content-around g-carousel">
+                    {this.makeItems(this.state.items)}
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

@@ -15,6 +15,8 @@ import BlogPost from './pages/BlogPostPage';
 import ProjectPage from './pages/ProjectPage';
 import ContactPage from './pages/ContactPage';
 import BlogPostPage from './pages/BlogPostPage';
+import Layout from "./components/Layout.js"
+import NavLinks from "./data/NavLinks.js"
 
 class App extends React.Component {
 
@@ -22,12 +24,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       title: 'Leare Song',
-      headerLinks: [
-        {title: 'ABOUT', path: '/about'},
-        {title: 'BLOG', path: '/blog'},
-        {title: 'PROJECTS', path: '/projects'},
-        {title: 'CONTACT', path: '/contact'}
-      ],
       home: {
         title: 'Do Good + Do it Well',
         subTitle: 'Software Engineer'
@@ -50,12 +46,6 @@ class App extends React.Component {
       contact: {
         title: 'Get in touch',
         subTitle: 'Contacts page',
-        icons: [
-          {link:'https://www.linkedin.com/in/learesong/', icon: faLinkedin},
-          {link:'https://github.com/learesong', icon: faGithub},
-          {link:'https://twitter.com/LeareSong', icon: faTwitter},
-          {link:'https://gitlab.com/learesong', icon: faGitlab},
-        ]
       }
     }
   }
@@ -63,36 +53,20 @@ class App extends React.Component {
   render(){
     return (
       <Router>
+        <Layout>
         <Container className="p-0" fluid={true}>
-          
-          <Navbar className="border-bottom sticky-top" bg="white" expand="lg">
-            <Navbar.Brand href="/"> Leare Song</Navbar.Brand> 
-
-            <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-            <Navbar.Collapse id="navbar-toggle">
-              <Nav className="ml-auto">
-                <Link className="nav-link" to="/about">About</Link>
-                <Link className="nav-link" to="/blog">Blog</Link>
-                <Link className="nav-link" to="/projects">Projects</Link>
-                <Link className="nav-link" to="contact">Contact</Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-
-
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle}></HomePage>} />
           <Route path="/about" exact render={() => <AboutPage title={this.state.about.title}></AboutPage>} />
           <Route path="/blog" exact render={() => <BlogPage title={this.state.blog.title} subTitle={this.state.blog.subTitle}></BlogPage>} />
           <Route path="/projects" exact render={() => <ProjectPage title={this.state.project.title} subTitle={this.state.project.subTitle}></ProjectPage>} />
           <Route path="/contact" exact render={() => <ContactPage title={this.state.contact.title} subTitle={this.state.contact.subTitle} icon={this.state.contact.icons}></ContactPage>} />
-
           {this.state.blog.posts.map((item) => 
             <Route path={item.link} exact render={() => <BlogPostPage title={item.title} subTitle={item.subTitle} category={item.category} content={item.content}></BlogPostPage>} />
           )}
-          
-          <Footer icon={this.state.contact.icons}/>
 
         </Container>
+
+       </Layout>
       </Router>
     );
   }

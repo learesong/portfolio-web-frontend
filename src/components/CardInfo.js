@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 
+import NavLinks from '../data/NavLinks';
+
 function CardInfo(props) {
     const style = useSpring({opacity: 1, from: {opacity: 0}})
     return(
@@ -9,8 +11,6 @@ function CardInfo(props) {
             <p  className="g-card-sub-title">{props.subTitle}</p>
             <a href={props.link}> View </a>
         </animated.div>
-
-        
     );
 }
 export default CardInfo;
