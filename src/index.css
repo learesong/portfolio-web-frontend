@@ -13,17 +13,12 @@ code {
 }
 
 /* .g-carousel {
-  margin-left: 90px !important;
-  margin-right: 90px !important;
+  margin-bottom: 0px !important;
 } */
 
 .g-card {
   display: inline-block;
   margin: auto;
-}
-
-.g-blog-card {
-  display: inline-block;
 }
 
 .g-blog-image {

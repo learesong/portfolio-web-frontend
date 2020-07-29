@@ -9,7 +9,7 @@ export default function NavBar(props) {
 
     return(
             <Navbar className="border-bottom sticky-top" bg="white" expand="lg">
-                <Navbar.Brand href="/"> Leare Song</Navbar.Brand> 
+                <Navbar.Brand href="/">leare.song</Navbar.Brand> 
                 <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
                 <Navbar.Collapse id="navbar-toggle">
                 <Nav className="ml-auto">

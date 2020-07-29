@@ -12,7 +12,7 @@ import ProfPic from '../assets/images/profile-pic.jpeg';
 function AboutPage(props) {
     return (
         <div>
-            <Hero title={props.title} />
+            {/* <Hero title={props.title} /> */}
 
             <div>
                 <Row>

@@ -9,7 +9,7 @@ import IconsList from '../data/IconList.js'
 function Footer(props) {
 
     return(
-        <footer className="mt-5" >
+        <footer className="fixed-bottom">
             <Container fluid={true}>
                 {/* <Row className="border-top justify-content-between p3">
                     <Col className="p-0" md={3} sm={12}>
@@ -19,12 +19,12 @@ function Footer(props) {
                         
                     </Col>
                 </Row> */}
-                <Row className="bg-light d-flex">
-                    <Col>
-                        Copyright © Leare Song 2020
-                    </Col>
+                <Row className="border-top d-flex p-3">
                     <Col>
                         {IconsList.map((item) => <Icon link={item.link} icon={item.icon} key={item.icon} />)}
+                    </Col>
+                    <Col className="d-flex justify-content-end">
+                       Copyright © Leare Song 2020
                     </Col>
                 </Row>
             </Container>

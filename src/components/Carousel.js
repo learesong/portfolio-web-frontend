@@ -17,7 +17,7 @@ class Carousel extends React.Component {
                 {
                     id: 0,
                     title: 'About',
-                    subTitle: 'Find out about me',
+                    subTitle: 'Who I am',
                     imgSrc: ProfileImg,
                     link: '/about',
                     selected: false 
@@ -25,7 +25,7 @@ class Carousel extends React.Component {
                 {
                     id: 1,
                     title: 'Blog',
-                    subTitle: 'Find out about blog',
+                    subTitle: 'Thoughts and notes',
                     imgSrc: BlogImg,
                     link: '/blog',
                     selected: false 
@@ -33,7 +33,7 @@ class Carousel extends React.Component {
                 {
                     id: 2,
                     title: 'Projects',
-                    subTitle: 'Find out about my projects',
+                    subTitle: 'Personal projects',
                     imgSrc: ProjectImg,
                     link: '/projects',
                     selected: false 
@@ -41,7 +41,7 @@ class Carousel extends React.Component {
                 {
                     id: 3,
                     title: 'Contacts',
-                    subTitle: 'Contact me',
+                    subTitle: 'Get in touch',
                     imgSrc: ContactImg,
                     link: '/contact',
                     selected: false 
@@ -75,7 +75,7 @@ class Carousel extends React.Component {
     render(){
         return(
             <div className="carousel-container">  
-                <Container>
+                <Container className="p-0">
                     <Row className="justify-content-around g-carousel">
                     {this.makeItems(this.state.items)}
                     </Row>

@@ -17,7 +17,7 @@ function ContactPage(props) {
 
         return(
             <div>
-                <Hero md={8} title={props.title}/>
+                {/* <Hero md={8} title={props.title}/> */}
                 <div>
                     <Row>
                         <Col>
@@ -25,12 +25,12 @@ function ContactPage(props) {
                                 <p>
                                     If you want to reach out to me then you can send me an email. <br/>
                                     You can either send it directly to <a href="mailto:hello@learesong.com">hello@learesong.com</a> or 
-                                    use the form below <Emoji label="envelope" symbol="✉️"/> 
+                                    just use the form below <Emoji label="envelope" symbol="✉️"/> 
                                     <Emoji label="postbox" symbol="📮"/> <br/>
 
-                                    {IconsList.map((item) => 
+                                    {/* {IconsList.map((item) => 
                                         <Icon link={item.link} icon={item.icon} key={item.icon} />
-                                    )}
+                                    )} */}
                                 </p>
                             </Content>
                         </Col>
