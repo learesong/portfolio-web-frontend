@@ -15,10 +15,10 @@ function BlogPostCard(props) {
     return(
         <>
         <a href={props.link}>
-                <Card className="shadow-sm bg-white mb-5" style={{ width: '37em' , height: '25em'}} >
+                <Card className="shadow-sm mb-5" style={{ width: '30em' , height: '25em'}} >
                     <Card.Img className="g-blog-image" variant="top" src={JavaBlogPostImg} alt="Blog post image" />
                     <Card.Body className="d-flex flex-column">
-                        <div className="d-flex mb-2 justify-content-between">
+                        <div className="d-flex mb-2">
                         <Card.Title className="mb-0 font-weight-bold">{props.title}</Card.Title>
                         <Badge pill variant="light">{props.category}</Badge>
                         </div>

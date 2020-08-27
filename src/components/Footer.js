@@ -9,7 +9,7 @@ import IconsList from '../data/IconList.js'
 function Footer(props) {
 
     return(
-        <footer className="fixed-bottom">
+        <footer className="g-footer">
             <Container fluid={true}>
                 {/* <Row className="border-top justify-content-between p3">
                     <Col className="p-0" md={3} sm={12}>

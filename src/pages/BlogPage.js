@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import { Badge, Card, CardDeck, Col, Container } from 'react-bootstrap';
+import { Badge, Card, CardDeck, Col, Container, Row } from 'react-bootstrap';
 import Axios from 'axios';
 
 import Hero from '../components/Hero';
@@ -8,21 +8,23 @@ import ProjectImg from '../assets/images/macbook-setup.jpeg';
 import JavaBlogPostImg from '../assets/images/java-oracle-icon.png';
     import BlogPost from '../components/BlogPost';
 import BlogPostCard from '../components/BlogPostCard';
+import useBlogClient from '../client/useBlogClient';
 
 function BlogPage(props){
 
-    const [blogposts, setBlogPosts] = useState([]);
+    // const [blogposts, setBlogPosts] = useState([]);
+    const blogposts = useBlogClient()
 
-    useEffect(() => {
-        Axios.get('http://localhost:8080/blogs')
-        .then(res => {
-            setBlogPosts(res.data);
-            // console.log(blogposts);
-        })  
-        .catch(err => {
-          console.error(err);
-        })
-    })
+    // useEffect(() => {
+    //     Axios.get('http://localhost:8080/blogs')
+    //     .then(res => {
+    //         setBlogPosts(res.data);
+    //         // console.log(blogposts);
+    //     })  
+    //     .catch(err => {
+    //       console.error(err);
+    //     })
+    // })
 
     // useEffect(async() => {
     //     try {
@@ -37,30 +39,45 @@ function BlogPage(props){
     return(        
 
         <div>
-            {/* <Router>
+            <Router>
                 {blogposts.map((blogpost) => 
-                    <Route path={blogpost.link} exact render={(blogpost) => <BlogPost title={blogpost.title} subTitle={blogpost.subTitle} link={blogpost.link} category={blogpost.category} content={blogpost.content}/>}/>
-                )}
-            </Router> */}
-            <Hero title={props.title} subTitle={props.subTitle}/>
-            <div>
-            <CardDeck className="d-flex flex-wrap justify-content-center p-5 mr-5 ml-5">
-                 {blogposts.map(function(blogpost){
-                return <div>
-                        <BlogPostCard 
-                            key = {blogpost.key}
-                            image="JavaBlogPostImg"
+                    <Route 
+                        path={blogpost.link} 
+                        exact render={(blogpost) => 
+                        <BlogPost 
                             title={blogpost.title} 
                             subTitle={blogpost.subTitle} 
-                            link={blogpost.link}
-                            category={blogpost.category} 
-                            content={blogpost.content}/>
-                    </div>
-                 })
-                 }
-            </CardDeck>
-            </div>
-            
+                            link={blogpost.link} category={blogpost.category} 
+                            content={blogpost.content}/>}
+                        />
+                )}
+            </Router>
+
+            {/* <Hero title={props.title} subTitle={props.subTitle}/> */}
+                        <div >
+                            <Row>
+                                <Col>
+                                    <CardDeck className="d-flex flex-wrap justify-content-center">
+                                        {blogposts.map(function(blogpost){
+                                        return <div>
+                                                
+                                                    <BlogPostCard 
+                                                        key = {blogpost.key}
+                                                        image="JavaBlogPostImg"
+                                                        title={blogpost.title} 
+                                                        subTitle={blogpost.subTitle} 
+                                                        link={blogpost.link}
+                                                        category={blogpost.category} 
+                                                        content={blogpost.content}
+                                                    />
+                                                
+                                            </div>
+                                        })
+                                        }
+                                    </CardDeck>
+                                </Col>
+                            </Row>
+                        </div>
         </div>
     );
 
