@@ -8,10 +8,11 @@ import { faLinkedin, faGithub, faTwitter, faGitlab, faGit } from '@fortawesome/f
 import './App.css';
 import useBlogClient from './client/useBlogClient';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPageOld';
+import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
 import ProjectPage from './pages/ProjectPage';
 import ContactPage from './pages/ContactPage';
+import ComingSoonPage from './pages/ComingSoonPage';
 import Footer from './components/Footer';
 import BlogPost from './components/BlogPost';
 import Layout from "./components/Layout"
@@ -56,7 +57,7 @@ function App (){
         <Container className="p-0" fluid={true}>
           <Route path="/" exact render={() => <HomePage title={state.home.title} subTitle={state.home.subTitle}></HomePage>} />
           <Route path="/about" exact render={() => <AboutPage title={state.about.title}></AboutPage>} />
-          <Route exact path="/blog" exact render={() => <BlogPage title={state.blog.title} subTitle={state.blog.subTitle}></BlogPage>} />
+          <Route exact path="/blog" exact render={() => <ComingSoonPage title={state.blog.title} subTitle={state.blog.subTitle}></ComingSoonPage>} />
           <Route path="/projects" exact render={() => <ProjectPage title={state.project.title} subTitle={state.project.subTitle}></ProjectPage>} />
           <Route path="/contact" exact render={() => <ContactPage title={state.contact.title} subTitle={state.contact.subTitle} icon={state.contact.icons}></ContactPage>} />
           {blogposts.map((item) => 

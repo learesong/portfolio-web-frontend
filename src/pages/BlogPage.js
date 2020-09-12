@@ -12,29 +12,7 @@ import useBlogClient from '../client/useBlogClient';
 
 function BlogPage(props){
 
-    // const [blogposts, setBlogPosts] = useState([]);
     const blogposts = useBlogClient()
-
-    // useEffect(() => {
-    //     Axios.get('http://localhost:8080/blogs')
-    //     .then(res => {
-    //         setBlogPosts(res.data);
-    //         // console.log(blogposts);
-    //     })  
-    //     .catch(err => {
-    //       console.error(err);
-    //     })
-    // })
-
-    // useEffect(async() => {
-    //     try {
-    //         const res = await Axios.get('http://localhost:8080/blogs');
-    //         setBlogPosts(res.data);
-    //         console.log(blogposts);
-    //     } catch(err) {
-    //         console.error(err);
-    //     }
-    // })
 
     return(        
 
@@ -52,8 +30,6 @@ function BlogPage(props){
                         />
                 )}
             </Router>
-
-            {/* <Hero title={props.title} subTitle={props.subTitle}/> */}
                         <div >
                             <Row>
                                 <Col>
